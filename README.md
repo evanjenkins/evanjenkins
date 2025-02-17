@@ -4,6 +4,12 @@ I am Evan and I am *mostly* a Front End Engineer with more than 14 years of expe
 I have been able to work on quite a few amazing projects using various different frameworks. I love building applications
 and learning new things.
 
+## Tech Stack
+Angular | React | NextJS | Typescript | Javascript | HTML | CSS | SCSS | Drupal | PHP | REST API | Netlify | Vercel | Pantheon
+
+## Motto
+> No problems. Just more work to do. - A&S
+
 <!--START_SECTION:waka-->
 <!--END_SECTION:waka-->
 
