@@ -10,16 +10,16 @@ export default function Nav() {
 
   return (
     <>
-      <div className="block lg:hidden">
-        <MobileNav links={navLinks} />
-      </div>
-      <div className="hidden lg:block fixed max-w-7xl top-2 inset-x-0 mx-auto text-xl">
-        <nav className="flex gap-8 font-[family-name:--font-source-code] justify-center">
-          { navLinks.map((link) => (
-            <NavLink key={link.location} navLink={link} />
-          ))}
-        </nav>
-      </div>
+      {/*<div className="block lg:hidden">*/}
+      <MobileNav links={navLinks} />
+      {/*</div>*/}
+      {/*<div className="hidden lg:block fixed max-w-7xl top-2 inset-x-0 mx-auto text-xl">*/}
+      {/*  <nav className="flex gap-8 font-[family-name:--font-source-code] justify-center">*/}
+      {/*    { navLinks.map((link) => (*/}
+      {/*      <NavLink key={link.location} navLink={link} />*/}
+      {/*    ))}*/}
+      {/*  </nav>*/}
+      {/*</div>*/}
     </>
   )
 }

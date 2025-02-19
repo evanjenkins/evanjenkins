@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Oswald, Source_Code_Pro } from "next/font/google";
+import { Oswald, Source_Code_Pro, Pixelify_Sans } from "next/font/google";
 import "./globals.css";
 import Nav from '@/components/molecules/Nav/Nav';
 
@@ -8,8 +8,13 @@ const oswaldSans = Oswald({
   subsets: ["latin"]
 })
 
-const sourceCodePro = Oswald({
+const sourceCodePro = Source_Code_Pro({
   variable: '--font-source-code',
+  subsets: ["latin"]
+})
+
+const pixelSans = Pixelify_Sans({
+  variable: '--font-pixel',
   subsets: ["latin"]
 })
 
@@ -26,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${oswaldSans.variable} ${sourceCodePro.variable} antialiased`}
+        className={`${oswaldSans.variable} ${sourceCodePro.variable} ${pixelSans.variable} antialiased`}
       >
         <Nav/>
         {children}

@@ -1,25 +1,31 @@
-'use client'
-
-import { motion } from "motion/react"
+import MyImage from '@/components/atoms/MyImage/MyImage';
+import Button from '@/components/atoms/Button/Button';
+import { ButtonColors, ButtonTypes } from '@/models';
 
 export default function Hello() {
   return (
-    <div id="home" className="min-h-[75vh] lg:min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-600 to-zinc-900">
-      <div className="max-w-7xl w-full pb-20 pt-36 px-8 lg:px-0">
-        <div className="flex justify-center relative">
-          <div className="flex flex-col items-center justify-center space-y-4">
-            <motion.h3
-              className="font-[family-name:--font-oswald] tracking-wide uppercase drop-shadow-sm text-5xl lg:text-[8vw] font-bold text-center bg-gradient-to-r from-zinc-100 to-zinc-100 inline-block text-transparent bg-clip-text"
-              animate={{ opacity: 1, y: 0 }}
-              initial={{ opacity: 0, y: -20 }}
-            >
-              Evan Jenkins
-            </motion.h3>
-
-            <p className="text-xl uppercase text-zinc-400">Frontend Engineer</p>
+    <div id="home"
+         className="min-h-[75vh] lg:min-h-screen flex items-center justify-center bg-gradient-to-br from-zinc-200 to-zinc-400 dark:from-zinc-600 dark:to-zinc-900">
+      <div className="max-w-7xl w-full pb-20 pt-36 px-8">
+        <div className="flex flex-col gap-8 lg:flex-row relative">
+          <div className="max-w-2xl flex flex-col space-y-4 justify-center">
+            <h1 className="text-sm uppercase tracking-widest">Evan Jenkins</h1>
+            <h3 className="text-5xl font-bold"><span className="font-[family-name:--font-pixel]">Pixels</span> to
+              experiences. <span className="font-[family-name:--font-source-code]">{'<'}Code{'/>'}</span> to
+              interactions.</h3>
+            <p className="text-zinc-600 dark:text-zinc-400 text-2xl font-lighter">
+              Hey there! My name is Evan and I love to create applications for the web.
+              Technologies are always evolving and I get excited about learning new things.
+            </p>
+            <div className="flex gap-4">
+              <Button type={ButtonTypes.button} color={ButtonColors.primary} label="Projects" />
+            </div>
+          </div>
+          <div className="max-w-md lg:px-12">
+            <MyImage />
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Hello from '@/components/molecules/Hello/Hello';
 
 export default function Home() {
