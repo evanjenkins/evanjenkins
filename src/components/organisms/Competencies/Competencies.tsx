@@ -1,0 +1,33 @@
+import Image from 'next/image';
+import cn from 'classnames';
+
+export default function Competencies() {
+  const logos: { path: string; alt: string; pathDark?: string }[] = [
+    { path: 'angular.svg', alt: 'Angular' },
+    { path: 'react.svg', alt: 'React' },
+    { path: 'nextjs-13.svg', alt: 'NextJS', pathDark: 'nextjs-13-dark.svg' },
+    { path: 'redux.svg', alt: 'Redux' },
+    { path: 'rxjs.svg', alt: 'Rxjs' },
+    { path: 'html.svg', alt: 'HTML' },
+    { path: 'sass.svg', alt: 'Sass' },
+    { path: 'netlify.svg', alt: 'Netlify' },
+    { path: 'vercel.svg', alt: 'Vercel' },
+  ];
+  return (
+    <div className="bg-base-100 flex flex-col justify-center items-center space-y-8 pb-20 pt-20">
+      <div className="space-y-2 text-center">
+        <h4 className="text-3xl">Tools in My Toolbox</h4>
+        <p className="text-base-content-300">Here are just some of the tools I have learned along the way.</p>
+      </div>
+      <ul className="max-w-7xl w-full px-4 grid grid-cols-3 lg:grid-cols-9 gap-8 items-center">
+        {logos.map((logo) => <li className="flex items-center justify-center" key={logo.path}>
+          {!!logo.pathDark &&
+            <Image className="hidden dark:block" src={`/logos/${logo.pathDark}`} alt={logo.alt} width={60}
+                   height={60} />}
+          <Image className={cn({ 'dark:hidden': !!logo.pathDark })} src={`/logos/${logo.path}`} alt={logo.alt}
+                 width={60} height={60} />
+        </li>)}
+      </ul>
+    </div>
+  );
+}

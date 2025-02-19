@@ -7,7 +7,9 @@ export type ButtonTypeKeys = keyof typeof ButtonTypes;
 export type ButtonType = typeof ButtonTypes[ButtonTypeKeys];
 
 export const ButtonColors = {
+  default: 'default',
   primary: 'primary',
+  secondary: 'secondary',
   accent: 'accent',
 } as const;
 export type ButtonColorKeys = keyof typeof ButtonColors;
@@ -18,11 +20,13 @@ export const ButtonStyles = {
   outline: 'outline',
 } as const;
 export type ButtonStyleKeys = keyof typeof ButtonStyles;
-export type ButtonStyle = keyof typeof ButtonStyles[ButtonStyleKeys];
+export type ButtonStyle = typeof ButtonStyles[ButtonStyleKeys];
 
 export interface ButtonProps {
   type: ButtonType;
-  color: ButtonColor;
   label: string;
-  style?: ButtonStyle;
+  color?: ButtonColor;
+  onClick?: () => void;
+  href?: string;
+  design?: ButtonStyle;
 }

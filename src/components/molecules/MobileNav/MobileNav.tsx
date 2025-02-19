@@ -1,48 +1,58 @@
 'use client';
 
 import { NavLinkModel } from '@/models';
-import { useEffect, useState } from 'react';
+import Link from 'next/link';
 import { GrClose, GrMenu } from 'react-icons/gr';
-import { useAnimate } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import cn from 'classnames';
 
 export default function MobileNav({ links }: { links: NavLinkModel[] }) {
-  const [open, setOpen] = useState(false);
-  const [scope, animate] = useAnimate();
-
-  const onOpenClick = () => {
-    setOpen(!open);
-    animate([
-      ['.menu', { x: !open ? 0 : `-100%` }, { type: 'tween', duration: 0.3 }],
-    ]);
-  };
+  const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
-    animate([
-      ['.menu', { x: `-100%` }, { duration: 0 }],
-    ]);
-  }, [animate]);
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const elementOffsetTop = document.getElementById('app-navbar')?.offsetTop || 0;
+      console.log(scrollPosition);
+      console.log(elementOffsetTop);
+      if (scrollPosition > elementOffsetTop) {
+        setIsFixed(true);
+      } else {
+        setIsFixed(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
-    <div ref={scope}>
-      <div
-        className={`shadow-md menu fixed top-0 w-3/4 max-w-lg bg-zinc-100 dark:bg-zinc-900 h-screen z-30 left-0 -translate-x-full`}>
+    <>
+      <div id="app-navbar"
+           className={cn('fixed top-0 left-0 right-0 p-4 flex gap-4 items-center transition-colors z-10', { 'bg-base-200': isFixed }, { 'bg-transparent': !isFixed })}>
+        <label htmlFor="app-drawer" aria-label="open sidebar" className="btn btn-square btn-ghost">
+          <GrMenu />
+        </label>
+        <h1 className="uppercase text-xs font-bold">Evan Jenkins</h1>
+      </div>
 
+      <div className="drawer-side z-20">
+        <label htmlFor="app-drawer" aria-label="close sidebar" className="drawer-overlay"></label>
+        <div className="bg-base-200 text-base-content min-h-full w-80 p-4">
+          <label htmlFor="app-drawer" aria-label="close sidebar" className="btn btn-square btn-ghost">
+            <GrClose />
+          </label>
+          <ul className="menu">
+            {links.map((link) => <li key={link.location}>
+              <Link href={link.location}>{link.label}</Link>
+            </li>)}
+          </ul>
+        </div>
       </div>
-      <div className="fixed top-8 left-8 z-30">
-        <button
-          className={`text-3xl transition-colors ${open ? 'text-black dark:text-zinc-100' : 'text-zinc-800 dark:text-zinc-100'}`}
-          aria-label="Navigation Menu"
-          onClick={onOpenClick}
-        >
-          {!open && (<GrMenu />)}
-          {open && (<GrClose />)}
-        </button>
-      </div>
-      {open && (
-        <div
-          className={`transition-opacity background bg-white dark:bg-black fixed top-0 bottom-0 left-0 right-0 z-20 ${open ? 'opacity-75' : 'opacity-0'}`}
-        ></div>
-      )}
-    </div>
+    </>
   );
 }
