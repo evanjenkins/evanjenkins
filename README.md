@@ -7,9 +7,5 @@ and learning new things.
 ## Tech Stack
 Angular | React | NextJS | Typescript | Javascript | HTML | CSS | SCSS | Drupal | PHP | REST API | Netlify | Vercel | Pantheon
 
-## Motto
-> No problems. Just more work to do. - A&S
-
-<!--START_SECTION:waka-->
-<!--END_SECTION:waka-->
-
+#### Work in progress
+[My site in NextJS](https://evanjenkins.vercel.app/)
