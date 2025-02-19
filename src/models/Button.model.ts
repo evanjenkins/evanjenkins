@@ -13,8 +13,16 @@ export const ButtonColors = {
 export type ButtonColorKeys = keyof typeof ButtonColors;
 export type ButtonColor = typeof ButtonColors[ButtonColorKeys];
 
+export const ButtonStyles = {
+  solid: 'solid',
+  outline: 'outline',
+} as const;
+export type ButtonStyleKeys = keyof typeof ButtonStyles;
+export type ButtonStyle = keyof typeof ButtonStyles[ButtonStyleKeys];
+
 export interface ButtonProps {
   type: ButtonType;
   color: ButtonColor;
   label: string;
+  style?: ButtonStyle;
 }

@@ -1,6 +1,6 @@
 import MyImage from '@/components/atoms/MyImage/MyImage';
 import Button from '@/components/atoms/Button/Button';
-import { ButtonColors, ButtonTypes } from '@/models';
+import { ButtonColors, ButtonStyles, ButtonTypes } from '@/models';
 
 export default function Hello() {
   return (
@@ -19,6 +19,8 @@ export default function Hello() {
             </p>
             <div className="flex gap-4">
               <Button type={ButtonTypes.button} color={ButtonColors.primary} label="Projects" />
+              <Button type={ButtonTypes.button} color={ButtonColors.primary} style={ButtonStyles.outline}
+                      label="My Resume" />
             </div>
           </div>
           <div className="max-w-md lg:px-12">
