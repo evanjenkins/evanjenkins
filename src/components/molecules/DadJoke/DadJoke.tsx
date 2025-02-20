@@ -28,7 +28,7 @@ export default function DadJoke() {
         const responseData = await response.json();
         setData(responseData);
         setLoading(false);
-      } catch (e) {
+      } catch {
         setError(true);
         setLoading(false);
       }
