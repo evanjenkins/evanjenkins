@@ -1,14 +1,24 @@
+import { AnimationSpeeds } from '@/consts';
+import { ButtonColor, ButtonColors, ButtonStyle, ButtonStyles, ButtonType } from '@/models';
+import cn from 'classnames';
 import * as motion from 'motion/react-client';
 import Link from 'next/link';
-import cn from 'classnames';
-import { ButtonColors, ButtonProps, ButtonStyles } from '@/models';
-import { AnimationSpeeds } from '@/consts';
+import { ReactNode } from 'react';
+
+interface ButtonProps {
+  type: ButtonType;
+  children: ReactNode;
+  color?: ButtonColor;
+  onClick?: () => void;
+  href?: string;
+  design?: ButtonStyle;
+}
 
 export default function Button({
                                  color = ButtonColors.default,
                                  type,
                                  design = ButtonStyles.solid,
-                                 label,
+                                 children,
                                  href,
                                  onClick,
                                }: ButtonProps) {
@@ -33,8 +43,9 @@ export default function Button({
         <Link
           href={href}
           role={type}
+          target="_blank"
         >
-          {label}
+          {children}
         </Link>
       </motion.div>
     );
@@ -47,7 +58,7 @@ export default function Button({
       type={type}
       onClick={onClick}
     >
-      {label}
+      {children}
     </motion.button>
   );
 }

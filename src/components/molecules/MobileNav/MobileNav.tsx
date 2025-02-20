@@ -1,20 +1,22 @@
 'use client';
 
 import { NavLinkModel } from '@/models';
-import Link from 'next/link';
-import { GrClose, GrMenu } from 'react-icons/gr';
-import { useEffect, useState } from 'react';
 import cn from 'classnames';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import { GrClose, GrMenu } from 'react-icons/gr';
 
-export default function MobileNav({ links }: { links: NavLinkModel[] }) {
+interface Props {
+  links: NavLinkModel[];
+}
+
+export default function MobileNav({ links }: Props) {
   const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const elementOffsetTop = document.getElementById('app-navbar')?.offsetTop || 0;
-      console.log(scrollPosition);
-      console.log(elementOffsetTop);
       if (scrollPosition > elementOffsetTop) {
         setIsFixed(true);
       } else {

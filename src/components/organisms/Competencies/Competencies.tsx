@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import cn from 'classnames';
+import Image from 'next/image';
 
 export default function Competencies() {
   const logos: { path: string; alt: string; pathDark?: string }[] = [
@@ -15,11 +15,11 @@ export default function Competencies() {
   ];
   return (
     <div className="bg-base-100 flex flex-col justify-center items-center space-y-8 pb-20 pt-20">
-      <div className="space-y-2 text-center">
+      <div className="container px-4 space-y-2 text-center">
         <h4 className="text-3xl">Tools in My Toolbox</h4>
         <p className="text-base-content-300">Here are just some of the tools I have learned along the way.</p>
       </div>
-      <ul className="max-w-7xl w-full px-4 grid grid-cols-3 lg:grid-cols-9 gap-8 items-center">
+      <ul className="container w-full px-4 grid grid-cols-3 lg:grid-cols-9 gap-8 items-center">
         {logos.map((logo) => <li className="flex items-center justify-center" key={logo.path}>
           {!!logo.pathDark &&
             <Image className="hidden dark:block" src={`/logos/${logo.pathDark}`} alt={logo.alt} width={60}

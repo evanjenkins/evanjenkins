@@ -1,7 +1,7 @@
+import Nav from '@/components/molecules/Nav/Nav';
 import type { Metadata } from 'next';
 import { Lexend, Pixelify_Sans, Source_Code_Pro } from 'next/font/google';
 import './globals.scss';
-import Nav from '@/components/molecules/Nav/Nav';
 
 const lexendSans = Lexend({
   variable: '--font-lexend',
@@ -29,15 +29,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-    <body
-      className={`${lexendSans.variable} ${sourceCodePro.variable} ${pixelSans.variable} antialiased drawer`}
-    >
-    <Nav />
-    <div className="drawer-content ">
-      {children}
-    </div>
-    </body>
+    <html lang="en" className="scroll-smooth">
+      <body
+        className={`${lexendSans.variable} ${sourceCodePro.variable} ${pixelSans.variable} antialiased drawer`}
+      >
+        <Nav />
+        <div className="drawer-content ">{children}</div>
+      </body>
     </html>
   );
 }

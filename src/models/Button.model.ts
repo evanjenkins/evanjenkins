@@ -22,11 +22,4 @@ export const ButtonStyles = {
 export type ButtonStyleKeys = keyof typeof ButtonStyles;
 export type ButtonStyle = typeof ButtonStyles[ButtonStyleKeys];
 
-export interface ButtonProps {
-  type: ButtonType;
-  label: string;
-  color?: ButtonColor;
-  onClick?: () => void;
-  href?: string;
-  design?: ButtonStyle;
-}
+

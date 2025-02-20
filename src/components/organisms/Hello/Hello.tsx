@@ -2,7 +2,6 @@ import MyImage from '@/components/atoms/MyImage/MyImage';
 import HelloButtons from '@/components/molecules/HelloButtons/HelloButtons';
 
 export default function Hello() {
-
   return (
     <div id="home"
          className="min-h-[75vh] flex items-center justify-center bg-linear-to-br from-[var(--color-base-100)] to-[var(--color-base-300)]">

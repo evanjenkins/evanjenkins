@@ -11,10 +11,10 @@ export default function HelloButtons() {
     <>
       <Button href={'#projects'} type={ButtonTypes.button} color={ButtonColors.primary}
               design={ButtonStyles.solid}
-              label="Projects" />
+      >Projects</Button>
       <Button onClick={downloadResume} type={ButtonTypes.button}
               design={ButtonStyles.outline}
-              label="My Resume" />
+      >My Resume</Button>
     </>
   );
 }
