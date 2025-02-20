@@ -16,7 +16,7 @@ export function getProjects(): Project[] {
     return {
       ...data,
       badges: data.badges?.split(',').map((i: string) => i.trim()),
-    };
+    } as Project;
   });
 
   return projects.sort(

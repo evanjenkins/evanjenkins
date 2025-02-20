@@ -12,6 +12,7 @@ interface ButtonProps {
   onClick?: () => void;
   href?: string;
   design?: ButtonStyle;
+  download?: string;
 }
 
 export default function Button({
@@ -20,6 +21,7 @@ export default function Button({
                                  design = ButtonStyles.solid,
                                  children,
                                  href,
+                                 download,
                                  onClick,
                                }: ButtonProps) {
   const className = cn(
@@ -42,8 +44,8 @@ export default function Button({
                   className={className}>
         <Link
           href={href}
-          role={type}
-          target="_blank"
+          target={ href.startsWith('http') || !!download ? '_blank' : '_self'}
+          download={download}
         >
           {children}
         </Link>
