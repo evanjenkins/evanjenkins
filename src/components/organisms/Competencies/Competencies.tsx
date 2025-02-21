@@ -14,7 +14,7 @@ export default function Competencies() {
     { path: 'vercel.svg', alt: 'Vercel' },
   ];
   return (
-    <div className="bg-base-100 flex flex-col justify-center items-center space-y-8 pb-20 pt-20">
+    <div className="bg-base-100 flex flex-col justify-center items-center space-y-8 pb-20 pt-20" id="expertise">
       <div className="container px-4 space-y-2 text-center">
         <h4 className="text-3xl">Tools in My Toolbox</h4>
         <p className="text-base-content-300">Here are just some of the tools I have learned along the way.</p>
