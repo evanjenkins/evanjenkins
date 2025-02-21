@@ -2,6 +2,7 @@ import Nav from '@/components/molecules/Nav/Nav';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { Lexend, Pixelify_Sans, Source_Code_Pro } from 'next/font/google';
+import siteConfig from '../../site.config';
 import './globals.scss';
 
 const lexendSans = Lexend({
@@ -20,8 +21,11 @@ const pixelSans = Pixelify_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Evan Jenkins',
-  description: 'Frontend Web Developer',
+  title: siteConfig.name,
+  description: siteConfig.slogan,
+  openGraph: {
+    images: ['/its-me.jpg'],
+  },
 };
 
 export default function RootLayout({

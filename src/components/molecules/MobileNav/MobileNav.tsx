@@ -3,6 +3,7 @@
 import NavLink from '@/components/atoms/NavLink/NavLink';
 import { NavLinkModel } from '@/models';
 import cn from 'classnames';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 import { GrClose, GrMenu } from 'react-icons/gr';
 
@@ -60,7 +61,11 @@ export default function MobileNav({ links }: Props) {
         >
           <GrMenu />
         </label>
-        <h1 className="uppercase text-xs font-bold">Evan Jenkins</h1>
+        <div className="flex gap-2 items-center">
+          <Image className="dark:hidden" src={'e-logo.svg'} alt="Evan Jenkins Logo" width={20} height={20} />
+          <Image className="hidden dark:block" src={'e-logo-dark.svg'} alt="Evan Jenkins Logo" width={20} height={20} />
+          <h1 className="uppercase text-xs font-bold">Evan Jenkins</h1>
+        </div>
       </div>
 
       <div className="drawer-side z-30">
