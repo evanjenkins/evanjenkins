@@ -5,6 +5,7 @@ export default function Nav() {
   const navLinks: NavLinkModel[] = [
     { label: 'home', location: '#home' },
     { label: 'expertise', location: '#expertise' },
+    { label: 'projects', location: '#projects' },
   ];
 
   return (
