@@ -1,11 +1,20 @@
-import Link from 'next/link';
+'use client'
 import { NavLinkModel } from '@/models';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-export default function NavLink({ navLink }: { navLink: NavLinkModel }) {
+export default function NavLink({ navLink, onClick }: { navLink: NavLinkModel; onClick: () => void }) {
+  const router = useRouter();
+  
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    onClick();
+    router.push(e.currentTarget.getAttribute('href') || '');
+  };
+
   return (
-    <Link href={`${navLink.location}`} className="group transition text-zinc-100 hover:text-sky-200">
-      {'<'} {navLink.label} {'/>'}
-      <span className="block max-w-0 group-hover:max-w-full transition-all duration-100 h-0.5 bg-sky-200"></span>
+    <Link href={navLink.location} onClick={handleClick}>
+      {navLink.label}
     </Link>
-  )
+  );
 }

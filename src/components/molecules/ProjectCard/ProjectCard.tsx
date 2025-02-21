@@ -33,7 +33,7 @@ export default function ProjectCard({ project, flip }: ProjectCardProps) {
           <motion.div
             initial={{ opacity: 0, y: 20, ...initial }}
             whileInView={{ opacity: 1, x: 0, y: 0 }}
-            viewport={{ once: true, amount: 0.9 }}
+            viewport={{ once: true, amount: 0.75 }}
             className="card-body relative lg:bg-base-100 lg:shadow-sm rounded-lg"
           >
             <h2 className="card-title">{project.title}</h2>

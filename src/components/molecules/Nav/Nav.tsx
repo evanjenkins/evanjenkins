@@ -1,5 +1,5 @@
-import { NavLinkModel } from '@/models';
 import MobileNav from '@/components/molecules/MobileNav/MobileNav';
+import { NavLinkModel } from '@/models';
 
 export default function Nav() {
   const navLinks: NavLinkModel[] = [
@@ -10,7 +10,6 @@ export default function Nav() {
 
   return (
     <>
-      <input id="app-drawer" type="checkbox" className="drawer-toggle" />
       <MobileNav links={navLinks} />
     </>
   );
