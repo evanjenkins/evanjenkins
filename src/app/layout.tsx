@@ -29,7 +29,7 @@ export default function RootLayout({
                                    }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const gaId = process.env.GOOGLE_ANALYTICCS_ID;
+  const gaId: string | undefined = process.env.GOOGLE_ANALYTICCS_ID;
 
   return (
     <html lang="en" className="scroll-smooth">
@@ -39,7 +39,7 @@ export default function RootLayout({
         <Nav />
         <div className="drawer-content ">{children}</div>
       </body>
-      <GoogleAnalytics gaId={gaId} />
+      {gaId && <GoogleAnalytics gaId={gaId} />}
     </html>
   );
 }
