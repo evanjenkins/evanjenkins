@@ -21,7 +21,7 @@ export default function Competencies() {
       <div className="container px-4 space-y-2 text-center">
         <h4 className="text-3xl">Tools in My Toolbox</h4>
         <p className="text-base-content-300">
-          Some of the frameworks and tools I've utilized throughout my journey.
+          Some of the frameworks and tools I have utilized throughout my journey.
         </p>
       </div>
       <ul className="container w-full px-4 grid grid-cols-3 lg:grid-cols-9 gap-8 items-center">
