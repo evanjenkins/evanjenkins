@@ -11,8 +11,7 @@ export default function MyWork({ projects }: MyWorkProps) {
     <div className="bg-base-300 flex justify-center py-20" id="projects">
       <div className="container flex flex-col items-center space-y-8 px-4 overflow-hidden">
         <div className="space-y-2 text-center max-w-xl">
-          <h4 className="text-3xl">Some Client Work</h4>
-          <p className="text-base-content-300 font-lighter">Projects I have built in my free time. Most of my time is spent on my professional work, which I can speak to.</p>
+          <h4 className="text-3xl">Client Work</h4>
         </div>
         <div className="max-w-4xl w-full space-y-20">
           {projects?.map((project: Project, index) => (

@@ -37,7 +37,19 @@ export default function Footer() {
         </nav>
         <div className="max-w-2xl">
           <h6 className="footer-title">I leave you with a dad joke</h6>
-          <DadJoke />
+          <div className="flex flex-col lg:flex-row gap-4 items-center">
+            <div className="relative overflow-hidden pr-2 pb-2">
+              <Image
+                className="relative z-1 rounded-lg hidden lg:block"
+                src={`/its-me-superhero.jpg`}
+                width={200}
+                height={300}
+                alt={'Me, as a superhero.'}
+              />
+              <div className="rounded-lg bg-primary absolute top-2 right-0 bottom-0 left-2 opacity-50"></div>
+            </div>
+            <DadJoke />
+          </div>
         </div>
       </footer>
     </div>

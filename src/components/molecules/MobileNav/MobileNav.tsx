@@ -47,7 +47,7 @@ export default function MobileNav({ links }: Props) {
       <div
         id="app-navbar"
         className={cn(
-          'fixed top-0 left-0 right-0 p-4 flex gap-4 items-center transition-colors z-10',
+          'fixed top-0 left-0 right-0 p-4 flex gap-4 items-center transition-colors z-20',
           { 'bg-base-200': isFixed },
           { 'bg-transparent': !isFixed }
         )}
@@ -63,7 +63,7 @@ export default function MobileNav({ links }: Props) {
         <h1 className="uppercase text-xs font-bold">Evan Jenkins</h1>
       </div>
 
-      <div className="drawer-side z-20">
+      <div className="drawer-side z-30">
         <label
           htmlFor="app-drawer"
           aria-label="close sidebar"
