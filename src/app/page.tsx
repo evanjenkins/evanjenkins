@@ -1,3 +1,4 @@
+import AboutMe from '@/components/organisms/AboutMe/AboutMe';
 import Competencies from '@/components/organisms/Competencies/Competencies';
 import Footer from '@/components/organisms/Footer/Footer';
 import Hello from '@/components/organisms/Hello/Hello';
@@ -15,6 +16,7 @@ export default async function Home() {
       <Hello />
       <Competencies />
       <MyWork projects={projects} />
+      <AboutMe />
       <Footer />
     </div>
   );

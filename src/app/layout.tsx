@@ -1,4 +1,5 @@
 import Nav from '@/components/molecules/Nav/Nav';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import type { Metadata } from 'next';
 import { Lexend, Pixelify_Sans, Source_Code_Pro } from 'next/font/google';
 import './globals.scss';
@@ -28,6 +29,8 @@ export default function RootLayout({
                                    }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const gaId = process.env.GOOGLE_ANALYTICCS_ID;
+
   return (
     <html lang="en" className="scroll-smooth">
       <body
@@ -36,6 +39,7 @@ export default function RootLayout({
         <Nav />
         <div className="drawer-content ">{children}</div>
       </body>
+      <GoogleAnalytics gaId={gaId} />
     </html>
   );
 }

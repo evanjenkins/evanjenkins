@@ -6,6 +6,7 @@ export default function Nav() {
     { label: 'home', location: '#home' },
     { label: 'expertise', location: '#expertise' },
     { label: 'projects', location: '#projects' },
+    { label: 'about me', location: '#about-me' },
   ];
 
   return (
