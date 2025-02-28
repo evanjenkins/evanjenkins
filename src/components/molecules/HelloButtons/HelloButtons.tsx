@@ -15,7 +15,7 @@ export default function HelloButtons() {
         Projects
       </Button>
       <Button
-        href="/resume/Evan_Jenkins_Resume.pdf"
+        href="/resume/Evan_Jenkins_Resume_Slim.pdf"
         type={ButtonTypes.button}
         download="Evan Jenkins Resume"
         design={ButtonStyles.outline}
