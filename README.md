@@ -10,5 +10,4 @@ Angular | React | NextJS | Typescript | NestJS | Java | Javascript | HTML | CSS 
 #### My Work in progress
 [My site in NextJS](https://evanjenkins.vercel.app/)
 
-[Even if Mobile App]
-(https://apps.apple.com/app/even-if/id6761586586)
+[Even if Mobile App](https://apps.apple.com/app/even-if/id6761586586)
