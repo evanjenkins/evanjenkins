@@ -10,8 +10,7 @@ export default function Competencies() {
     { path: 'rxjs.svg', alt: 'Rxjs' },
     { path: 'html.svg', alt: 'HTML' },
     { path: 'sass.svg', alt: 'Sass' },
-    { path: 'netlify.svg', alt: 'Netlify' },
-    { path: 'vercel.svg', alt: 'Vercel', pathDark: 'vercel-dark.svg' },
+    { path: 'nestjs.svg', alt: 'NestJS' },
   ];
   return (
     <div
