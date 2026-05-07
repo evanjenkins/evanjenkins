@@ -9,12 +9,12 @@ const AboutMe = () => {
         <div className="space-y-2">
           <h4 className="text-3xl text-primary">About Me</h4>
           <p className="text-base-content-300 text-xl">
-            Frontend developer with a passion for learning.
+            Software engineer with a passion for learning.
           </p>
           <p>
             Starting with a BS in Graphic Design, then learning and growing into
-            a well-versed frontend web developer. Worked with many large
-            enterprises in my career to deliver fast and user-friendly
+            a well-versed software engineer with a lean towards frontend development. I have worked 
+            with many large enterprises in my career to deliver fast and user-friendly
             experiences.
           </p>
           <p>My degree in Graphic Design has given me a keen eye for matching mock-ups to experiences for users.</p>
@@ -27,7 +27,8 @@ const AboutMe = () => {
             </div>
             <div className="collapse-content text-sm space-y-2">
               <p>
-                I have had the pleasure of working with ActiveLAMP for over 14
+                Currently I am a Senior Software Engineer at BNSF.
+                I have also had the pleasure of working with ActiveLAMP for over 14
                 years. I have learned so much and been able to utilize many
                 different frameworks and technologies.
               </p>
